@@ -9,6 +9,7 @@
 6. RemoveDuplicates.py 去重功能，结果保存为 data/repeat_index.pkl和data/repeat_set.pkl
 7. hot_point.py 根据去重文档生成热点，结果保存为 data/热点话题.xlsx
 8. simhash.py 提取hash特征（最终没有使用）
+9. data/not_keywords.txt 提取热词时，将如“军事”等话题高频词屏蔽
 
 ## 运行方法
 1. 执行 RemoveDuplicates.py 去重，结果保存为 data/repeat_index.pkl和data/repeat_set.pkl
