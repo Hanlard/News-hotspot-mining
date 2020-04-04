@@ -96,16 +96,16 @@ def get_key_sentences(text, num=1):
     return abstract
 
 def Merge_process(JuLei,dataset):
-    Hotpoint = {"话题ID": [],"公司名称":[], "话题概述":[], "话题热词": [], "新闻标题": [], "新闻正文": [], "新闻热词": [], "链接":[]}
+    Hotpoint = {"话题ID": [],"单位名称":[], "话题概述":[], "话题热词": [], "新闻标题": [], "新闻正文": [], "新闻热词": [], "链接":[]}
     with open("data/not_keywords.txt", "r", encoding="utf-8") as f:
         not_keywords = set(f.read().splitlines())
     for class_index in tqdm(JuLei):
-        ##	目标公司	简称	标题	正文	来源	链接	时间
+        ##	目标单位	简称	标题	正文	来源	链接	时间
         text = ""
         titles = ""
         keywords_ = []
         for i, index in enumerate(JuLei[class_index]):
-            Hotpoint["公司名称"].append(dataset['目标公司'].iloc[index])
+            Hotpoint["单位名称"].append(dataset['目标单位'].iloc[index])
             Hotpoint["链接"].append(dataset['链接'].iloc[index])
             Hotpoint["话题ID"].append(class_index)
             data = dataset['正文'].iloc[index]  # 正文
@@ -170,18 +170,18 @@ def Merge(Hotpoint,JuLei,dataset,firstK=2):
     return Hotpoint
 def Generate_Hotpoint(JuLei, dataset, Stopwords):
     print("生成热点与摘要...")
-    Hotpoint = {"话题ID": [],"公司名称":[], "话题概述":[], "话题热词": [], "新闻标题": [], "新闻正文": [], "新闻热词": [], "链接":[]}
+    Hotpoint = {"话题ID": [],"单位名称":[], "话题概述":[], "话题热词": [], "新闻标题": [], "新闻正文": [], "新闻热词": [], "链接":[]}
     with open("data/not_keywords.txt", "r", encoding="utf-8") as f:
         not_keywords = set(f.read().splitlines())
     for class_index in tqdm(JuLei):
-        ##	目标公司	简称	标题	正文	来源	链接	时间
+        ##	目标单位	简称	标题	正文	来源	链接	时间
         # corpus_keywords = {}
         text = ""
         titles = ""
         abstracts = ""
         keywords_ = []
         for i, index in enumerate(JuLei[class_index]):
-            Hotpoint["公司名称"].append(dataset['目标公司'].iloc[index])
+            Hotpoint["单位名称"].append(dataset['目标单位'].iloc[index])
             Hotpoint["链接"].append(dataset['链接'].iloc[index])
             Hotpoint["话题ID"].append(class_index)
             data = dataset['正文'].iloc[index]  # 正文
