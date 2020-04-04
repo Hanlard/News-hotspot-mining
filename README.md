@@ -3,7 +3,7 @@
 ## 文件说明
 1. data/数据集.xlsx: 原始数据集的DEMO，需要替换
 2. data/stopwords.txt 中文停用词
-3. data/wholewords.txt 金融术语（jieba分词使用）
+3. data/wholewords.txt 术语（jieba分词使用）
 4. data/repeat_index.pkl 文档去重结果：字典 {"原文档ID":[重复文档ID列表]}
 5. data/repeat_set.pkl 文档去重结果：重复文档ID集合
 6. RemoveDuplicates.py 去重功能，结果保存为 data/repeat_index.pkl和data/repeat_set.pkl
